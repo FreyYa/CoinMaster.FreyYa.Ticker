@@ -36,8 +36,7 @@ namespace CoinMaster.FreyYa.Ticker.RawModels
 			this.High = item.price;
 			this.Low = item.price;
 			this.Close = item.price;
-			this.Bun = "0";
-			this.cont_no = item.cont_no;
+			this.Bun = 0;
 			this.Currency = Currency;
 			this.Volume = 0;
 		}
@@ -49,7 +48,7 @@ namespace CoinMaster.FreyYa.Ticker.RawModels
 		/// <param name="js_time">자바 스크립트 기반 시간 정보</param>
 		public CmCandleStick(double price, string currency, string js_time)
 		{
-			this.Bun = "0";
+			this.Bun = 0;
 			this.Currency = currency;
 			this.DateTime = ConvertFromUnixTimestamp(Convert.ToDouble(js_time));
 
@@ -68,7 +67,7 @@ namespace CoinMaster.FreyYa.Ticker.RawModels
 		/// <param name="Close"></param>
 		/// <param name="Volume"></param>
 		/// <param name="Currency"></param>
-		public CmCandleStick(DateTime date, string minute, double open, double high, double low, double close, double volume, string currency)
+		public CmCandleStick(DateTime date, int minute, double open, double high, double low, double close, double volume, string currency)
 		{
 			this.Bun = minute;
 			this.Currency = currency;
@@ -86,17 +85,13 @@ namespace CoinMaster.FreyYa.Ticker.RawModels
 			return origin.AddSeconds(timestamp / 1000).ToLocalTime();
 		}
 		/// <summary>
-		/// Transactions 전용
-		/// </summary>
-		public int cont_no { get; set; }
-		/// <summary>
 		/// AUTO_INCREMENT IDX. can't Insert
 		/// </summary>
 		public int Id { get; set; }
 		/// <summary>
 		/// 1분, 5분, 10분, 15분 ,30분 60분 
 		/// </summary>
-		public string Bun { get; set; }
+		public int Bun { get; set; }
 		/// <summary>
 		/// 날짜시간 
 		/// </summary>
@@ -125,5 +120,9 @@ namespace CoinMaster.FreyYa.Ticker.RawModels
 		/// 통화 종류. BTC, ETH, DASH, LTC, ETC, XRP, BCH, XMR, ZEC, QTUM, BTG, EOS
 		/// </summary>
 		public string Currency { get; set; }
+		/// <summary>
+		/// 해당 통화의 거래소 이름
+		/// </summary>
+		public string Exchange { get; set; }
 	}
 }
