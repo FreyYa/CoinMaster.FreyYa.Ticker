@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawModels\CmCandleStick.cs" />
+    <Compile Include="RawModels\SellType.cs" />
     <Compile Include="RawModels\Sign.cs" />
+    <Compile Include="RawModels\TradeType.cs" />
     <Compile Include="XCoinAPI.cs" />
   </ItemGroup>
   <ItemGroup>
