@@ -10,6 +10,10 @@ namespace CoinMaster.FreyYa.Ticker.RawModels
 	public class Place
 	{
 		/// <summary>
+		/// 현재 Place를 그리는 상태인지 표시
+		/// </summary>
+		public bool IsDrawing { get; set; }
+		/// <summary>
 		/// 거래 활성화 여부
 		/// </summary>
 		public bool IsEnable { get; set; }
