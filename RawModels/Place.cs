@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoinMasterViewer.Models
+namespace CoinMaster.FreyYa.Ticker.RawModels
 {
 	public class Place
 	{
