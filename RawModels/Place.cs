@@ -45,6 +45,10 @@ namespace CoinMaster.FreyYa.Ticker.RawModels
 		/// 거래 가격
 		/// </summary>
 		public double Price { get; set; }
+		/// <summary>
+		/// 거래 ID
+		/// </summary>
+		public string OrderID { get; set; }
 		public override string ToString()
 		{
 			return Name;
